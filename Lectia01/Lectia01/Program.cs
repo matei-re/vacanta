@@ -12,21 +12,19 @@ namespace Lectia01
         {
             Console.WriteLine("Cum te cheama ");
             string name = Console.ReadLine();
-            string Hour = Console.ReadLine();
-            int hour = int.Parse(Hour);
+            Console.WriteLine("Hello" + name);
+            Console.WriteLine("Cat ai dormit");
+            string hourtringsssss = Console.ReadLine();
+            int hour = int.Parse(hourtringsssss);
             if(hour>8)
                 Console.WriteLine("Te-ai odihnit");
             else
                 Console.WriteLine("Mai dormi");
 
+            Console.ReadKey();
 
 
-
-            /*
-            if (args[0] == "Mara")
-                Console.WriteLine("Crocodil si Barza si Strut si Iguana");
-            else
-                Console.WriteLine("Crocodil si Barza");*/
+           
         }
     }
 }
