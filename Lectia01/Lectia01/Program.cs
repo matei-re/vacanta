@@ -10,7 +10,7 @@ namespace Lectia01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Crocodil si Barza si Strut");
+            Console.WriteLine("Crocodil si Barza si Strut si Iguana");
         }
     }
 }
