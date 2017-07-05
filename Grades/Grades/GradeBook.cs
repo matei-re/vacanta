@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Grades
 {
     public class GradeBook
     {
-        public NameChangeDelegat NameDelegate ;
+       // public NameChangeDelegat NameDelegate ;
         private string _name;
         List<float> grades;
 
@@ -18,10 +19,10 @@ namespace Grades
             set
             {
                 if (!string.IsNullOrEmpty(value))
-                    if(_name!=value)
+                 /*   if(_name!=value)
                     {
                         NameDelegate(_name, value);
-                    }
+                    }*/
                     _name = value;
             }
         }
@@ -49,6 +50,14 @@ namespace Grades
         public void AddGrade(float grade)
         {
             grades.Add(grade);
+        }
+
+        public void WriteGrades(TextWriter destination)
+        {
+            for(int i=0;i<grades.Count;i++)
+            {
+                destination.WriteLine(grades[i]);
+            }
         }
     }
 }
