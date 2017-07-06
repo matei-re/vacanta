@@ -12,7 +12,7 @@ namespace Grades
     {
         static void Main(string[] args)
         {
-            var book = new GradeBook();
+            var book = new ThrowAwayGradeBook();
             GetBookName(book);
             AddGrades(book);
             //   SpeechSynthesizer spune = new SpeechSynthesizer();
