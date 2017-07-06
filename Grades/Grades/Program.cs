@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Speech.Synthesis;
 using System.Text;
@@ -12,13 +13,25 @@ namespace Grades
         static void Main(string[] args)
         {
             var book = new GradeBook();
-            book.Name = "Hello Mara";
+            try
+            {
+                Console.WriteLine("Ïntrodu un nume");
+                book.Name = Console.ReadLine();
+            }
+            catch(ArgumentException ex)
+                {
+                Console.WriteLine(ex.Message);
+
+            }
             book.AddGrade(40);
             book.AddGrade(80.1f);
             book.AddGrade(76);
             book.AddGrade(100);
             //   SpeechSynthesizer spune = new SpeechSynthesizer();
             //  spune.Speak("Hello Mara! I love you!");
+            StreamWriter outputFile = File.CreateText("Grades");
+            book.WriteGrades(outputFile);
+            outputFile.Close();
             GradeStatistic stats = book.ComputeStatistic();
             Console.WriteLine(book.Name);
             book.WriteGrades(Console.Out);

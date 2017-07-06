@@ -18,7 +18,8 @@ namespace Grades
             }
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentException("Trebuiesa introduceti un nume");
                  /*   if(_name!=value)
                     {
                         NameDelegate(_name, value);
