@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Grades
 {
-    public class GradeBook
+    public class GradeBook : Object
     {
        // public NameChangeDelegat NameDelegate ;
         private string _name;
@@ -32,7 +32,7 @@ namespace Grades
             grades = new List<float>();
         }
 
-        public GradeStatistic ComputeStatistic()
+        public virtual GradeStatistic ComputeStatistic()
         {
             Console.WriteLine("GradeBook Compute");
             GradeStatistic stats = new GradeStatistic();

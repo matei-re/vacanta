@@ -8,7 +8,7 @@ namespace Grades
 {
     public class ThrowAwayGradeBook : GradeBook
     {
-        public new GradeStatistic ComputeStatistic()
+        public override GradeStatistic ComputeStatistic()
         {
             Console.WriteLine("Throw Compute");
             float lowest = float.MaxValue;

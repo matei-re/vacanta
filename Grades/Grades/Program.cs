@@ -12,18 +12,29 @@ namespace Grades
     {
         static void Main(string[] args)
         {
-            var book = new ThrowAwayGradeBook();
+            GradeBook book = CreateGradeBook();
+            GradeBook book1 = new GradeBook();
             GetBookName(book);
             AddGrades(book);
+
             //   SpeechSynthesizer spune = new SpeechSynthesizer();
             //  spune.Speak("Hello Mara! I love you!");
             SaveGrades(book);
             WriteGrades(book);
+            GetBookName(book1);
+            AddGrades(book1);
+              WriteGrades(book1);
 
+            
             Console.ReadKey();
 
 
 
+        }
+
+        private static GradeBook CreateGradeBook()
+        {
+            return new ThrowAwayGradeBook();
         }
 
         private static void WriteGrades(GradeBook book)
